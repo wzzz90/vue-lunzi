@@ -23,5 +23,8 @@
   "homepage": "https://github.com/wzzz90/vue-lunzi#readme",
   "dependencies": {
     "vue": "^2.6.6"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.11.0"
   }
 }
