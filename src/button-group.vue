@@ -10,6 +10,14 @@ export default {
   data () {
     return {
     };
+  },
+  mounted() {
+    for (const node of this.$el.children) {
+      let name = node.nodeName.toLowerCase();
+      if(name !== 'button') {
+        console.warn(`g-button-group 的子元素应全为 g-button，而此时为 ${name}`)
+      }
+    }
   }
 }
 
