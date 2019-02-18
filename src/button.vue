@@ -1,19 +1,31 @@
 <template>
-  <button class="g-button">按钮</button>
+  <button class="g-button" :class="{[`iconPos-${iconPosition}`]: true}">
+    <i :class="['iconfont', 'lunzi-icon', 'icon-'+icon]" v-if="icon"></i>
+    <div class="content">
+      <slot></slot>
+    </div>
+    
+  </button>
 </template>
 
 <script>
-export default {}
+export default {
+  props: ['icon', 'iconPosition']
+}
 
 </script>
 <style lang='scss' scoped>
     .g-button {
+      cursor: pointer;
       font-size: var(--font-size);
       height: var(--button-height);
       padding: 0 1em;
       border-radius: var(--border-radius);
       border: 1px solid var(--border-color);
       background: var(--button-bg);
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
       &:hover {
         border-color: var(--border-color-hover);
       }
@@ -23,6 +35,25 @@ export default {}
       &:focus {
         outline: none;
       }
+
+      &>.content {
+        order: 2;
+      }
+      &>.lunzi-icon {
+        order: 1;
+        margin-right: .1rem;
+      }
+      &.iconPos-right {
+        &>.content {
+          order: 1;
+        }
+        &>.lunzi-icon {
+          order: 2;
+          margin-left: .1rem;
+          margin-right: 0;
+        }
+      }
     }
+
     
 </style>

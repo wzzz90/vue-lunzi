@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>轮子</title>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1048331_l3kuccvl4a.css">
   <style>
     /* 注释后才会出现样式，目前没发现什么原因 */
     /* *{margin: 0;padding: 0;box-sizing: border-box}; */
     
     :root {
-      --font-size: 20px;
+      --font-size: 14px;
       --button-height: 32px;
       --button-bg: #fff;
       --button-active-bg: #eee;
@@ -25,11 +26,16 @@
     body {
       font-size: var(--font-size);
     }
+    .lunzi-icon {
+      font-size: 1em;
+    }
   </style>
 </head>
 <body>
   <div id="app">
-    <g-button></g-button>
+      <g-button>按钮</g-button>
+      <g-button icon="shezhi" icon-position="left">按钮</g-button>
+      <g-button icon="shezhi" icon-position="right">按钮</g-button>
   </div>
   <script src="./src/app.js"></script>
 </body>
