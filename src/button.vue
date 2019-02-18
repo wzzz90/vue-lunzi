@@ -1,6 +1,7 @@
 <template>
-  <button class="g-button" :class="{[`iconPos-${iconPosition}`]: true}">
-    <g-icon :name="icon" v-if="icon"></g-icon>
+  <button class="g-button" :class="{[`iconPos-${iconPosition}`]: true}" @click="$emit('click')">
+    <g-icon :name="icon" v-if="icon && !loading"></g-icon>
+    <g-icon name="loading" class="loading" v-if="loading"></g-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -11,7 +12,11 @@
 <script>
 export default {
   props: {
-    icon: '',
+    icon: {},
+    loading: {
+      type: Boolean,
+      default: false
+    },
     iconPosition: {
       type: String,
       default: 'left',
@@ -24,6 +29,10 @@ export default {
 
 </script>
 <style lang='scss' scoped>
+    @keyframes spin {
+      0% { transform: rotate(0deg) }
+      100% { transform: rotate(360deg) }
+    }
     .g-button {
       cursor: pointer;
       font-size: var(--font-size);
@@ -61,6 +70,10 @@ export default {
           margin-left: .1rem;
           margin-right: 0;
         }
+      }
+
+      .loading {
+        animation: spin 1.2s infinite linear;
       }
     }
 

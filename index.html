@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>轮子</title>
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1048331_mzrnltooc2p.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1048331_kpdq5j3wqm.css">
   <style>
     /* 注释后才会出现样式，目前没发现什么原因 */
     /* *{margin: 0;padding: 0;box-sizing: border-box}; */
@@ -30,9 +30,9 @@
 </head>
 <body>
   <div id="app">
-      <g-button>按钮</g-button>
-      <g-button icon="shezhi" icon-position="left">按钮</g-button>
-      <g-button icon="shezhi" icon-position="right">按钮</g-button>
+      <g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
+      <g-button icon="shezhi" icon-position="left" :loading="loading2" @click="loading2 = !loading2">按钮</g-button>
+      <g-button icon="shezhi" icon-position="right" :loading="loading3" @click="loading3 = !loading3">按钮</g-button>
       <g-icon name="download"></g-icon>
   </div>
   <script src="./src/app.js"></script>
